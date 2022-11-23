@@ -1,0 +1,45 @@
+JS. HW_2
+
+Напишите валидационный скрипт используя функции 
+
+ 1. Скрипт должен на вход принимать строку.
+ 2. После проверки строки выводить в консоль сообщение где будет конкретно написано, что не так в ведённой строке.
+ 3. Минимум 5 символов в строке
+ 4. Максимум 64 символа в строке
+ 5. В строке должны быть буквы
+ 6. Должна быть хотя бы одна буква в верхнем регистре
+ 7. Должна быть хотя бы одна цифра
+ 8. Должна быть хотя бы одна @
+ 9. Строка не должна быть пустой
+
+
+const minLetters = 5;
+const maxLetters = 64;
+function checkString(str){
+
+	if (str.length < minLetters){
+		console.log("too short string")
+	}
+	if(str.length > 64){
+		console.log("too long string")
+	}
+	if (str.match(/[a-z]+/g) === null ){
+		console.log("does not contain letters")
+		}
+	if (str.match(/[0-9]+/g) === null ){
+		console.log("does not contain numbers")
+		}	
+		if (str.match(/[@]+/g) === null ){
+			console.log("does not contain simbol @")
+	}
+	if (str.match(/[A-Z]+/g) === null ){
+		console.log("does not contain uppercase letters")
+	}
+	if (str != null && typeof str !== "undefined") {
+		str = str.trim();
+ }
+ 
+ if (!str) { 
+		console.log("Empty");
+ }
+}
